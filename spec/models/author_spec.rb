@@ -2,7 +2,14 @@ require 'rails_helper'
 
 RSpec.describe Author, type: :model do
   context 'Validation Presence Tests' do
-    it 'Ensures full name presence'
+    it 'Ensures full name presence' do
+      author = Author.new(
+        full_name: nil,
+        email: Faker::Internet.free_email,
+        password: Faker::Team.name.downcase.strip.gsub(' ', '')
+      ).save
+      expect(author).to eq(false)
+    end
     it 'Ensures email presence'
     it 'Ensures password presence'
     it 'Should save successfully'
