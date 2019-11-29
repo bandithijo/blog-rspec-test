@@ -5,5 +5,5 @@ class Author < ApplicationRecord
   # validations
   validates :full_name, presence: true
   validates :email, presence: true
-  validates :password, :presence: true
+  validates :password, presence: true
 end
