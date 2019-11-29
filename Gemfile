@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.7'
 # Custom gem
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
+gem 'faker', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
