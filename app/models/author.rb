@@ -4,7 +4,6 @@ class Author < ApplicationRecord
 
   # validations
   validates :full_name, presence: true,
-                        uniqueness: {case_sensitive: false},
                         length: {minimum: 5, maximum: 30}
 
   VALID_EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i

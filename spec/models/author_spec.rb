@@ -97,8 +97,22 @@ RSpec.describe Author, type: :model do
     end
   end
 
-  context 'Username and Email Uniqueness Tests' do
-    it 'Ensures username has uniqueness'
-    it 'Ensures email has uniqueness'
+  context 'Email Uniqueness Tests' do
+    before do
+      Author.new(
+        full_name: Faker::Team.name.downcase.strip.gsub(' ', ''),
+        email: 'bandithijo@gmail.com',
+        password: Faker::Team.name.downcase.strip.gsub(' ', '')
+      ).save
+    end
+
+    it 'Ensures email has uniqueness' do
+      author = Author.new(
+        full_name: Faker::Team.name.downcase.strip.gsub(' ', ''),
+        email: 'bandithijo@gmail.com',
+        password: Faker::Team.name.downcase.strip.gsub(' ', '')
+      ).save
+      expect(author).to eq(false)
+    end
   end
 end
