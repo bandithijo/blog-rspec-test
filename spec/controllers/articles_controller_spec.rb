@@ -27,4 +27,26 @@ RSpec.describe ArticlesController, type: :controller do
       expect(response).to be_ok
     end
   end
+
+  context 'proper Routes Tests' do
+    it 'Should has proper index route' do
+      expect(get: '/articles').to be_routable
+    end
+
+    it 'Should has proper show route' do
+      expect(get: '/articles/1').to be_routable
+    end
+
+    it 'Should has proper new route' do
+      expect(get: '/articles/new').to be_routable
+    end
+
+    it 'Should has proper edit route' do
+      expect(get: '/articles/1/edit').to be_routable
+    end
+
+    it 'Should has proper destroy route' do
+      expect(delete: '/articles/1').to be_routable
+    end
+  end
 end
