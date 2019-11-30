@@ -10,9 +10,33 @@ RSpec.describe Author, type: :model do
       ).save
       expect(author).to eq(false)
     end
-    it 'Ensures email presence'
-    it 'Ensures password presence'
-    it 'Should save successfully'
+
+    it 'Ensures email presence' do
+      author = Author.new(
+        full_name: Faker::Team.name.downcase.strip.gsub(' ', ''),
+        email: nil,
+        password: Faker::Team.name.downcase.strip.gsub(' ', '')
+      ).save
+      expect(author).to eq(false)
+    end
+
+    it 'Ensures password presence' do
+      author = Author.new(
+        full_name: Faker::Team.name.downcase.strip.gsub(' ', ''),
+        email: Faker::Internet.free_email,
+        password: nil
+      ).save
+      expect(author).to eq(false)
+    end
+
+    it 'Should save successfully' do
+      author = Author.new(
+        full_name: Faker::Team.name.downcase.strip.gsub(' ', ''),
+        email: Faker::Internet.free_email,
+        password: Faker::Team.name.downcase.strip.gsub(' ', '')
+      ).save
+      expect(author).to eq(true)
+    end
   end
 
   context 'Validation Length Tests' do
