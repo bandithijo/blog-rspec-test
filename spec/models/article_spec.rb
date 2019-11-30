@@ -30,10 +30,15 @@ RSpec.describe Article, type: :model do
     end
 
     it 'Should save successfully' do
+      author = Author.create!(
+        full_name: Faker::Team.name.titlecase,
+        email: Faker::Internet.free_email,
+        password: Faker::Team.name.downcase.strip.gsub(' ', '')
+      )
       article = Article.new(
-        title: Faker::Team.name,
+        title: Faker::Team.name.titlecase,
         post: Faker::Hipster.paragraphs.map! { |w| "#{w}" }.join,
-        author_id: 1
+        author_id: author.id
       ).save
       expect(article).to eq(true)
     end
