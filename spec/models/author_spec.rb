@@ -40,10 +40,41 @@ RSpec.describe Author, type: :model do
   end
 
   context 'Validation Length Tests' do
-    it 'Ensures full name character length, more than 5'
-    it 'Ensures full name character length, less than 30'
-    it 'Ensures email character length, less than 50'
-    it 'Ensures password character length, same or more than 8'
+    it 'Ensures full name character length, more than 5' do
+      author = Author.new(
+        full_name: 'ban',
+        email: Faker::Internet.free_email,
+        password: Faker::Team.name.downcase.strip.gsub(' ', '')
+      ).save
+      expect(author).to eq(false)
+    end
+
+    it 'Ensures full name character length, less than 30' do
+      author = Author.new(
+        full_name: 'bandithijobandithijobandithijobandithijo',
+        email: Faker::Internet.free_email,
+        password: Faker::Team.name.downcase.strip.gsub(' ', '')
+      ).save
+      expect(author).to eq(false)
+    end
+
+    it 'Ensures email character length, less than 50' do
+      author = Author.new(
+        full_name: Faker::Team.name.downcase.strip.gsub(' ', ''),
+        email: 'bandithijobandithijobandithijobandithijobandithijo@gmail.com',
+        password: Faker::Team.name.downcase.strip.gsub(' ', '')
+      ).save
+      expect(author).to eq(false)
+    end
+
+    it 'Ensures password character length, same or more than 8' do
+      author = Author.new(
+        full_name: Faker::Team.name.downcase.strip.gsub(' ', ''),
+        email: Faker::Internet.free_email,
+        password: 'bandit'
+      ).save
+      expect(author).to eq(false)
+    end
   end
 
   context 'Email Format Tests' do
