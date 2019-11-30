@@ -2,9 +2,32 @@ require 'rails_helper'
 
 RSpec.describe Article, type: :model do
   context 'Validation Presence Tests' do
-    it 'Ensures title presence'
-    it 'Ensures post presence'
-    it 'Ensures author id presence'
+    it 'Ensures title presence' do
+      article = Article.new(
+        title: nil,
+        post: Faker::Hipster.paragraphs.map! { |w| "#{w}" }.join,
+        author_id: 1
+      ).save
+      expect(article).to eq(false)
+    end
+
+    it 'Ensures post presence' do
+      article = Article.new(
+        title: Faker::Team.name,
+        post: nil,
+        author_id: 1
+      ).save
+      expect(article).to eq(false)
+    end
+
+    it 'Ensures author id presence' do
+      article = Article.new(
+        title: Faker::Team.name,
+        post: Faker::Hipster.paragraphs.map! { |w| "#{w}" }.join,
+        author_id: nil
+      ).save
+      expect(article).to eq(false)
+    end
     it 'Should save successfully'
   end
 
