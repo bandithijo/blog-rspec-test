@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-between">
+  <div class="my-3">
+    <%= link_to "< Back to Articles", articles_path, class: "btn btn-dark" %>
+  </div>
+  <h1>//Article[+]</h1>
+</div>
+<%= form_for article do |f| %>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Title</label>
+      <%= f.text_field :title, class: "form-control", placeholder: "e.g. Ruby on Rails", autofocus: true %>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Author</label>
+      <%= f.collection_select :author_id, Author.all, :id, :full_name, { include_blank: 'Select Author' }, { class: 'form-control'} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Post</label>
+    <%= f.text_area :post, class: "form-control", rows: '15', placeholder: "Write your post here..." %>
+  </div>
+  <div class="form-group">
+    <div class="d-flex justify-content-end">
+      <%= f.submit "Publish", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
