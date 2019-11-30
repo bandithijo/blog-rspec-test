@@ -71,11 +71,23 @@ $ bundle exec rspec
         Returns a success response
     Get #show
         Returns a success response
+    proper Routes Tests
+        Should has proper index route
+        Should has proper show route
+        Should has proper new route
+        Should has proper edit route
+        Should has proper destroy route
 
     AuthorsController
     Get #index
         Returns a success response
     Get #show
         Returns a success response
+    Proper Routes Tests
+        Should has proper index route
+        Should has proper show route
+        Should has proper new route
+        Should has proper edit route
+        Should has proper destroy route
     ```
 
