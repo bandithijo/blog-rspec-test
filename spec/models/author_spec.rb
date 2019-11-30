@@ -78,8 +78,23 @@ RSpec.describe Author, type: :model do
   end
 
   context 'Email Format Tests' do
-    it 'Ensures email format not valid'
-    it 'Ensures email format valid'
+    it 'Ensures email format not valid' do
+      author = Author.new(
+        full_name: Faker::Team.name.downcase.strip.gsub(' ', ''),
+        email: 'bandithijo@bandithijo',
+        password: Faker::Team.name.downcase.strip.gsub(' ', '')
+      ).save
+      expect(author).to eq(false)
+    end
+
+    it 'Ensures email format valid' do
+      author = Author.new(
+        full_name: Faker::Team.name.downcase.strip.gsub(' ', ''),
+        email: Faker::Internet.free_email,
+        password: Faker::Team.name.downcase.strip.gsub(' ', '')
+      ).save
+      expect(author).to eq(true)
+    end
   end
 
   context 'Username and Email Uniqueness Tests' do
