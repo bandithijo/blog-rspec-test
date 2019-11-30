@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-between">
+  <div class="my-3">
+    <%= link_to "< Back to Authors", authors_path, class: "btn btn-dark" %>
+  </div>
+  <h1>//Author[<%= @author.id %>]</h1>
+</div>
+<div class="row d-flex justify-content-center">
+  <div class="col-md-6 border border-dark rounded pt-3">
+    <form>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Full Name</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" value="<%= @author.full_name %>" disabled>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-9">
+          <input type="email" class="form-control" value="<%= @author.email %>" disabled>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Password</label>
+        <div class="col-sm-9">
+          <input type="password" class="form-control" value="****************" disabled>
+        </div>
+      </div>
+      <div class="form-group">
+      <div class="row">
+        <div class=" col-md-8">
+          <label for="inputEmail4">Created at: <strong><%= @author.created_at.strftime("%d %B %Y") %></strong></label>
+        </div>
+        <div class=" col-md-4 d-flex justify-content-end">
+          <%= link_to "Edit", nil, class: "btn btn-danger" %>
+        </div>
+      </div>
+      </div>
+    </form>
+  </div>
+</div>
