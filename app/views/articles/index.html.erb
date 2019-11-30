@@ -27,7 +27,7 @@
         <td><%= truncate(article.post, length: 100) %></td>
         <td>
           <div class="btn-group" role="group" aria-label="Basic example">
-            <%= link_to "Detail", nil, class: "btn btn-outline-dark btn-sm" %>
+            <%= link_to "Detail", article_path(article), class: "btn btn-outline-dark btn-sm" %>
             <%= link_to "Edit", nil, class: "btn btn-outline-dark btn-sm" %>
             <%= link_to "Delete", nil, method: :delete, data: {confirm: "Are you sure, you want to delete the article?"}, class: "btn btn-outline-danger btn-sm" %>
           </div>
