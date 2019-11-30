@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-between">
+  <div class="my-1">
+    <%= link_to "< Home", nil, class: "btn btn-dark" %>
+    <%= link_to "Articles >", nil, class: "btn btn-dark" %>
+    <%= link_to "+ Create Author", nil, class: "btn btn-danger" %>
+  </div>
+  <div class="my-1">
+    <h1>//Authors</h1>
+  </div>
+</div>
+<table class="table table-md table-rounded table-striped">
+  <thead class="thead-dark">
+    <tr class="text-center">
+      <th scope="col">ID</th>
+      <th scope="col">FULL NAME</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">TOTAL ARTICLE</th>
+      <th scope="col">ACTIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @authors.each do |author| %>
+      <tr>
+        <td><%= author.id %></td>
+        <td><%= author.full_name %></td>
+        <td><%= author.email %></td>
+        <td class="text-center"><%# author.articles.size %></td>
+        <td class="text-center">
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <%= link_to "Detail", nil, class: "btn btn-outline-dark btn-sm" %>
+            <%= link_to "Edit", nil, class: "btn btn-outline-dark btn-sm" %>
+            <%= link_to "Delete", nil, method: :delete, data: {confirm: "Are you sure, you want to delete the user?"}, class: "btn btn-outline-danger btn-sm" %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
