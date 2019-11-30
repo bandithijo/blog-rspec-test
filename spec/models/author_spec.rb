@@ -13,7 +13,7 @@ RSpec.describe Author, type: :model do
 
     it 'Ensures email presence' do
       author = Author.new(
-        full_name: Faker::Team.name.downcase.strip.gsub(' ', ''),
+        full_name: Faker::Team.name.titlecase,
         email: nil,
         password: Faker::Team.name.downcase.strip.gsub(' ', '')
       ).save
@@ -22,7 +22,7 @@ RSpec.describe Author, type: :model do
 
     it 'Ensures password presence' do
       author = Author.new(
-        full_name: Faker::Team.name.downcase.strip.gsub(' ', ''),
+        full_name: Faker::Team.name.titlecase,
         email: Faker::Internet.free_email,
         password: nil
       ).save
@@ -31,7 +31,7 @@ RSpec.describe Author, type: :model do
 
     it 'Should save successfully' do
       author = Author.new(
-        full_name: Faker::Team.name.downcase.strip.gsub(' ', ''),
+        full_name: Faker::Team.name.titlecase,
         email: Faker::Internet.free_email,
         password: Faker::Team.name.downcase.strip.gsub(' ', '')
       ).save
@@ -60,7 +60,7 @@ RSpec.describe Author, type: :model do
 
     it 'Ensures email character length, less than 50' do
       author = Author.new(
-        full_name: Faker::Team.name.downcase.strip.gsub(' ', ''),
+        full_name: Faker::Team.name.titlecase,
         email: 'bandithijobandithijobandithijobandithijobandithijo@gmail.com',
         password: Faker::Team.name.downcase.strip.gsub(' ', '')
       ).save
@@ -69,7 +69,7 @@ RSpec.describe Author, type: :model do
 
     it 'Ensures password character length, same or more than 8' do
       author = Author.new(
-        full_name: Faker::Team.name.downcase.strip.gsub(' ', ''),
+        full_name: Faker::Team.name.titlecase,
         email: Faker::Internet.free_email,
         password: 'bandit'
       ).save
@@ -80,7 +80,7 @@ RSpec.describe Author, type: :model do
   context 'Email Format Tests' do
     it 'Ensures email format not valid' do
       author = Author.new(
-        full_name: Faker::Team.name.downcase.strip.gsub(' ', ''),
+        full_name: Faker::Team.name.titlecase,
         email: 'bandithijo@bandithijo',
         password: Faker::Team.name.downcase.strip.gsub(' ', '')
       ).save
@@ -89,7 +89,7 @@ RSpec.describe Author, type: :model do
 
     it 'Ensures email format valid' do
       author = Author.new(
-        full_name: Faker::Team.name.downcase.strip.gsub(' ', ''),
+        full_name: Faker::Team.name.titlecase,
         email: Faker::Internet.free_email,
         password: Faker::Team.name.downcase.strip.gsub(' ', '')
       ).save
@@ -100,7 +100,7 @@ RSpec.describe Author, type: :model do
   context 'Email Uniqueness Tests' do
     before do
       Author.new(
-        full_name: Faker::Team.name.downcase.strip.gsub(' ', ''),
+        full_name: Faker::Team.name.titlecase,
         email: 'bandithijo@gmail.com',
         password: Faker::Team.name.downcase.strip.gsub(' ', '')
       ).save
@@ -108,7 +108,7 @@ RSpec.describe Author, type: :model do
 
     it 'Ensures email has uniqueness' do
       author = Author.new(
-        full_name: Faker::Team.name.downcase.strip.gsub(' ', ''),
+        full_name: Faker::Team.name.titlecase,
         email: 'bandithijo@gmail.com',
         password: Faker::Team.name.downcase.strip.gsub(' ', '')
       ).save
