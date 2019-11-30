@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-between">
+  <div class="my-3">
+    <%= link_to "< Back to Authors", authors_path, class: "btn btn-dark" %>
+  </div>
+  <h1>//Author[+]</h1>
+</div>
+<div class="row d-flex justify-content-center">
+  <div class="col-md-6 border border-dark rounded pt-3">
+    <div class="alert alert-warning border-dark" role="alert">
+      Enter new author.<br>
+      This author will be available in author list when create new article.
+    </div>
+    <%= form_for author do |f| %>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Full Name</label>
+        <div class="col-sm-9">
+          <%= f.text_field :full_name, class: "form-control", placeholder: "e.g. bandithijo", autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-9">
+          <%= f.email_field :email, class: "form-control", placeholder: "e.g. bandithijo@bandithijo.com", autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Password</label>
+        <div class="col-sm-9">
+          <%= f.password_field :password, class: "form-control", placeholder: "e.g. ^$OgQ*B^l=JjJx6", autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class=" col-md-8"></div>
+          <div class=" col-md-4 d-flex justify-content-end">
+            <%= f.submit "Publish", class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
