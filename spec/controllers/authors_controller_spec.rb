@@ -19,4 +19,26 @@ RSpec.describe AuthorsController, type: :controller do
       expect(response).to be_ok
     end
   end
+
+  context 'Proper Routes Tests' do
+    it 'Should has proper index route' do
+      expect(get: '/authors').to be_routable
+    end
+
+    it 'Should has proper show route' do
+      expect(get: '/authors/1').to be_routable
+    end
+
+    it 'Should has proper new route' do
+      expect(get: '/authors/new').to be_routable
+    end
+
+    it 'Should has proper edit route' do
+      expect(get: '/authors/1/edit').to be_routable
+    end
+
+    it 'Should has proper destroy route' do
+      expect(delete: '/authors/1').to be_routable
+    end
+  end
 end
