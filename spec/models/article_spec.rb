@@ -68,5 +68,14 @@ RSpec.describe Article, type: :model do
     end
   end
 
-  context 'Data Type Tests'
+  context 'Data Type Tests' do
+    it 'Ensures Author ID is numericality' do
+      article = Article.new(
+        title: Faker::Team.name,
+        post: Faker::Hipster.paragraphs.map! { |w| "#{w}" }.join,
+        author_id: 'satu'
+      ).save
+      expect(article).to eq(false)
+    end
+  end
 end
