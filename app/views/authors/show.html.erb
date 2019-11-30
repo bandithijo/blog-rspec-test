@@ -31,7 +31,7 @@
           <label for="inputEmail4">Created at: <strong><%= @author.created_at.strftime("%d %B %Y") %></strong></label>
         </div>
         <div class=" col-md-4 d-flex justify-content-end">
-          <%= link_to "Edit", nil, class: "btn btn-danger" %>
+          <%= link_to "Edit", edit_author_path(@author), class: "btn btn-danger" %>
         </div>
       </div>
       </div>
