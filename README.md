@@ -2,7 +2,7 @@
 
 ## What is this?
 
-This is a dummy project for me to try it out Rspec with small test.
+This is a dummy project for me to try it out RSpec with small test.
 
 I created this project with MiniTest disabled.
 
@@ -18,11 +18,12 @@ I created this project with MiniTest disabled.
 
 1. Ruby 2.6.3
 2. Rails 6.0.1
+3. PostgreSQL 11.5
 
 
 ## Run Rspec test
 
-For run the Rspec test, please using command below.
+For run the RSpec test, please using command below.
 
 ```
 $ bundle exec rspec
