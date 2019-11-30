@@ -1,16 +1,25 @@
 <div class="jumbotron bg-white border border-dark">
   <h1 class="display-4">Hello, mas Bro!</h1>
-  <p class="lead">This is a simple Rspec test project that I build for test purposes. It build with Ruby 2.6.3 and Rails 6.0.1. It using Bootstrap 4.3 for CSS Framework.</p>
+  <p class="lead">This is a simple RSpec test project that I build for learning purposes. It build with Ruby 2.6.3, Rails 6.0.1, Bootstrap 4.3 as CSS Framework and RSpec 4.0.0.beta3.</p>
   <hr class="my-4 border-dark">
   <h4>Flow :</h4>
   <ul>
     <li>There are two tables, Articles and Authors. Those are have one to many relation.</li>
     <li>We are able to create new author and create new article with available author in the list.</li>
+    <li>We are able to inspect the detail, edit, and delete data from both of tables.</li>
   </ul>
   <hr class="my-4 border-dark">
   <%= link_to "Articles >", articles_path, class: "btn btn-dark btn-lg" %>
   <%= link_to "Authors >", authors_path, class: "btn btn-dark btn-lg" %>
+  <hr class="my-4 border-dark">
+  <h4>To Do :</h4>
+  <ol>
+    <li>Add more feature.</li>
+    <li>Add more test.</li>
+    <li>Many thing...</li>
+  </ol>
 </div>
-<div class="text-right">
-  <p>Copyright &copy; <a href="https://bandithijo.com" class="a-none">BanditHijo</a> | November 2019</p>
+<div class="d-flex justify-content-between">
+  <p>Source: <a href="https://github.com/bandithijo/blog-rspec-test" target="_blank" class="a-none">https://github.com/bandithijo/blog-rspec-test/</a></p>
+  <p>Copyright &copy; <a href="https://bandithijo.com" target="_blank" class="a-none">BanditHijo</a> | November 2019</p>
 </div>
