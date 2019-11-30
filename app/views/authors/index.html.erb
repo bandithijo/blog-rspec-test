@@ -28,7 +28,7 @@
         <td class="text-center">
           <div class="btn-group" role="group" aria-label="Basic example">
             <%= link_to "Detail", author_path(author), class: "btn btn-outline-dark btn-sm" %>
-            <%= link_to "Edit", nil, class: "btn btn-outline-dark btn-sm" %>
+            <%= link_to "Edit", edit_author_path(author), class: "btn btn-outline-dark btn-sm" %>
             <%= link_to "Delete", nil, method: :delete, data: {confirm: "Are you sure, you want to delete the user?"}, class: "btn btn-outline-danger btn-sm" %>
           </div>
         </td>
