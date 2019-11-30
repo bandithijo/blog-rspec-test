@@ -1,0 +1,56 @@
+h1,
+h2,
+h3,
+h4,
+th,
+label,
+.btn {
+  font-family: 'Bebas Neue', cursive;
+}
+
+body,
+td,
+p,
+.form-control {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+a.a-none, a.a-none:hover {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.table {
+    border: solid 1px #343a40;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.table thead th {
+    padding: 10px;
+}
+.table tbody td {
+    padding: 10px;
+}
+.table-rounded {
+    border: none;
+}
+.table-rounded thead th {
+    border: none;
+}
+.table-rounded thead th:first-child {
+    border-radius: 0.25rem 0 0 0;
+}
+.table-rounded thead th:last-child {
+    border-radius: 0 0.25rem 0 0;
+}
+.table-rounded tbody td {
+    border: none;
+    border-top: solid 1px #dee2e6;
+}
+.table-rounded tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 0.25rem;
+}
+.table-rounded tbody tr:last-child td:last-child {
+    border-radius: 0 0 0.25rem 0;
+}
